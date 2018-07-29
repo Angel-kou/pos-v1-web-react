@@ -19,8 +19,6 @@ class ListItem extends PureComponent {
   };
 
   addToCart = () => {
-    console.log('kmj');
-    console.log('hahhah', this.props.item.cartCount);
     this.props.itemToCart(this.props.item, this.state.count);
   };
 
@@ -30,25 +28,42 @@ class ListItem extends PureComponent {
       console.log('item', item.cartCount);
     }
     return (
-      <div key={item.barcode} className="ListItem">
-        <span className="itemName">{item.name}</span>
-        <span className="price">
-          {item.price}元/{item.unit}
-        </span>
-        <span>
-          <button className="btn" onClick={this.decrement}>
-            -
-          </button>
-          <span className="number">{this.state.count}</span>
-          <button className="btn" onClick={this.increment}>
-            +
-          </button>
-        </span>
-        <span>
-          <button className="btnToCart" onClick={this.addToCart}>
-            {'Add To Cart'}
-          </button>
-        </span>
+      <div key={item.barcode}>
+        <div className="container" id="title1">
+          <div className="row">
+            <div className="col-sm">{item.name}</div>
+            <div className="col-sm">
+              {item.price}元/{item.unit}
+            </div>
+            <div className="col-sm">
+              <span
+                className="badge badge-light"
+                onClick={this.decrement}
+                id="span1"
+              >
+                -
+              </span>
+              <span className="number">{this.state.count}</span>
+              <span
+                className="badge badge-light"
+                onClick={this.increment}
+                id="span2"
+              >
+                +
+              </span>
+            </div>
+            <div className="col-sm">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={this.addToCart}
+                id="addToCart"
+              >
+                {'Add To Cart'}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

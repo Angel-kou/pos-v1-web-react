@@ -3,7 +3,6 @@ import './App.css';
 import { loadAllItems, loadPromotions } from './database';
 import ListItem from '../src/ListItem.js';
 import CartItem from '../src/CartItem.js';
-import PromotionItem from '../src/PromotionItem.js';
 
 class App extends PureComponent {
   constructor(props) {
@@ -75,7 +74,15 @@ class App extends PureComponent {
         {!this.state.cartPage ? (
           <div>
             <h1>ITEM List</h1>
-            <div className="AllItems">
+            <div className="container" id="title">
+              <div className="row">
+                <div className="col-sm">商品名</div>
+                <div className="col-sm">商品价格</div>
+                <div className="col-sm">添加</div>
+                <div className="col-sm" />
+              </div>
+            </div>
+            <div>
               {this.state.AllItems.map(item => (
                 <ListItem
                   key={item.barcode}
@@ -98,6 +105,15 @@ class App extends PureComponent {
         ) : (
           <div>
             <h1>Cart List</h1>
+            <div className="container" id="title">
+              <div className="row">
+                <div className="col-sm">商品名</div>
+                <div className="col-sm">商品价格</div>
+                <div className="col-sm">购买数量</div>
+                <div className="col-sm">小计</div>
+              </div>
+            </div>
+
             <div className="AllItems">
               {this.state.cart.map(item => (
                 <CartItem

@@ -26,12 +26,16 @@ class CartItem extends PureComponent {
     return (
       <div>
         <div key={item.barcode} className="ListItem">
-          <span className="itemName">{item.name}</span>
-          <span className="price">
-            {item.price}元/{item.unit}
-          </span>
-          <span>数量：{item.cartCount}</span>
-          <span>小计：{this.state.price}元</span>
+          <div className="container" id="title1">
+            <div className="row">
+              <div className="col-sm">{item.name}</div>
+              <div className="col-sm">
+                {item.price}元/{item.unit}
+              </div>
+              <div className="col-sm">{item.cartCount}</div>
+              <div className="col-sm">{this.state.price}元</div>
+            </div>
+          </div>
         </div>
       </div>
     );
