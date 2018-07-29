@@ -1,3 +1,45 @@
 .App {
   text-align: center;
+  background-size: cover;
+  background-position: center;
+  color: black;
+  font-family: helvetica;
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin: 10px 20px 10px 0;
+}
+
+.itemName {
+  width: 100px;
+  text-align: right;
+  position: relative;
+  margin: 10px 200px 10px 0;
+}
+
+.price {
+  position: relative;
+  margin: 10px 50px 10px 0;
+}
+
+.btn {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin: 10px;
+}
+
+.btnToCart {
+  width: 100px;
+  height: 20px;
+  position: relative;
+  margin: 10px 20px 10px 50px;
+}
+
+#cart {
+  width: 100px;
+  height: 40px;
 }
